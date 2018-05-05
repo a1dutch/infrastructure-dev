@@ -1,10 +1,11 @@
-@Library('pipeline@master')
-
+@Library('pipeline@master') _
 pipeline {
+  agent { label 'helm' }
   stages {
-    agent { label 'helm' }
-    steps {
-      deploy(namespace: 'dev')
+    stage('Deploy') {
+      steps {
+        deploy(namespace: 'dev')
+      }
     }
   }
 }
