@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Deploy') {
       steps {
-        deploy(namespace: 'dev')
+        helmDeploy(namespace: 'dev')
       }
     }
   }
